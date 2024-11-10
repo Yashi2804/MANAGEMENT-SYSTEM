@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labour Dashboard</title>
+  <link rel="stylesheet" href="LABOUR_CSS.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Labour Dashboard</h1>
+      <button onclick="logout()">Logout</button>
+    </header>
+    <section class="user-info">
+      <h2>Welcome-</h2>
+    </section>
+    <div class="graphs-container">
+      <div class="chart-container">
+        <h3>Tasks Distribution</h3>
+        <canvas id="pieChart" ></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Task Completion Progress</h3>
+        <canvas id="barChart" width="50" height="50"></canvas>
+      </div>
+    </div>
+    <section class="task-status">
+      <h3>Update Task Status</h3>
+      <form onsubmit="updateTask(event)">
+        <select id="taskSelect">
+          <option value="inventory">Inventory Sorting</option>
+          <option value="cleaning">Equipment Cleaning</option>
+          <option value="packing">Packing Orders</option>
+        </select>
+        <select id="statusSelect">
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section class="table-container">
+      <h3>Labour Details</h3>
+      <div class="scrollable-table">
+        <table id="laborTable">
+          <thead>
+            <tr>
+              <th>Sno.</th>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Allotted Work</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Aditi Gupta</td>
+              <td>Supervisor</td>
+              <td>Inventory Sorting</td>
+              <td>Completed</td>
+              <td>11/11/2024</td>
+              <td><button onclick="deleteRow(1)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Dhruv Sharma</td>
+              <td>Technician</td>
+              <td>Equipment Cleaning</td>
+              <td>In Progress</td>
+              <td>11/11/2024</td>
+              <td><button onclick="deleteRow(2)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Mayank Pandey</td>
+              <td>Operator</td>
+              <td>Packing Orders</td>
+              <td>Pending</td>
+              <td>11/11/2024</td>
+              <td><button onclick="deleteRow(3)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Riya kothari</td>
+              <td>Assistant</td>
+              <td>Inventory Sorting</td>
+              <td>Completed</td>
+              <td>11/11/2024</td>
+              <td><button onclick="deleteRow(4)">Delete</button></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Yash Mathur</td>
+              <td>Technician</td>
+              <td>Equipment Cleaning</td>
+              <td>In Progress</td>
+              <td>11/11/2024</td>
+              <td><button onclick="deleteRow(5)">Delete</button></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <form id="addLaborForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="designation" placeholder="Designation" required>
+        <input type="text" id="work" placeholder="Allotted Work" required>
+        <select id="status">
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <input type="date" id="date" required>
+        <button type="submit">Add Labour</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="LABOUR_JS.js"></script>
+</body>
+</html>

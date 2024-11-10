@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HR Dashboard</title>
+    <link rel="stylesheet" href="HR_CSS.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>HR Dashboard</h1>
+        </header>
+        
+        <div class="dashboard-content">
+            <div class="card">
+                <canvas id="attendanceChart"></canvas>
+            </div>
+            <div class="card">
+                <canvas id="salaryChart"></canvas>
+            </div>
+            <div class="card">
+                <canvas id="taskChart"></canvas>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h2>Employee Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Attendance (%)</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Aditi Gupta</td>
+                        <td>Supervisor</td>
+                        <td>90%</td>
+                        <td>₹70000</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Dhruv Sharma</td>
+                        <td>Technician</td>
+                        <td>85%</td>
+                        <td>₹90000</td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Mayank Pandey</td>
+                        <td>Packaging</td>
+                        <td>95%</td>
+                        <td>₹30000</td>
+                    </tr>
+                    <tr>
+                        <td>104</td>
+                        <td>Riya Kothari</td>
+                        <td>Assistant</td>
+                        <td>95%</td>
+                        <td>₹40000</td>
+                    </tr>
+                    <tr>
+                        <td>105</td>
+                        <td>Yash Mathur</td>
+                        <td>Technician</td>
+                        <td>90%</td>
+                        <td>₹92000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="HR_JS.js"></script>
+</body>
+</html>

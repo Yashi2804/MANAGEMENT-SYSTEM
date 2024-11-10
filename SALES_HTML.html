@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Manager Dashboard</title>
+  <link rel="stylesheet" href="SALES_CSS.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <ul>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Manage Labours</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <h1>Sales Manager Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+      </header>
+
+      <!-- Statistics Section -->
+      <section class="stats">
+        <div class="card">
+          <h3>Total Labours</h3>
+          <p>100</p>
+        </div>
+        <div class="card">
+          <h3>Areas Managed</h3>
+          <p>Noida, Delhi, Greater Noida</p>
+        </div>
+        <div class="card">
+          <h3>Tasks Completed</h3>
+          <p>70%</p>
+        </div>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts">
+        <div class="chart-container">
+          <h3>Labour Distribution by Area</h3>
+          <canvas id="areaPieChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Task Progress</h3>
+          <canvas id="taskProgressChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Labour In-time vs Out-time</h3>
+          <canvas id="timeBarChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Labour Table -->
+      <section class="table-container">
+        <h3>Labour Details</h3>
+        <table id="laborTable">
+          <thead>
+            <tr>
+              <th>Sno.</th>
+              <th>Name</th>
+              <th>Area</th>
+              <th>Designation</th>
+              <th>Work</th>
+              <th>Status</th>
+              <th>In-Time</th>
+              <th>Out-Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Aditi Gupta</td>
+              <td>Noida</td>
+              <td>Supervisor</td>
+              <td>Inventory Sorting</td>
+              <td>Present</td>
+              <td>9:00 AM</td>
+              <td>5:00 PM</td>
+              <td><button onclick="editLabor('Aditi Gupta')">Edit</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Dhruv Sharma</td>
+              <td>Delhi</td>
+              <td>Technician</td>
+              <td>Equipment Cleaninng</td>
+              <td>Present</td>
+              <td>10:00 AM</td>
+              <td>6:00 PM</td>
+              <td><button onclick="editLabor('Dhruv Sharma')">Edit</button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Mayank Pandey</td>
+              <td>Greater Noida</td>
+              <td>Operator</td>
+              <td>Packing Orders</td>
+              <td>Absent</td>
+              <td>-</td>
+              <td>-</td>
+              <td><button onclick="editLabor('Mayank Pandey')">Edit</button></td>
+            </tr> 
+            <tr>
+              <td>4</td>
+              <td>Riya Kothari</td>
+              <td>Noida</td>
+              <td>Assistant</td>
+              <td>Inventory Sorting</td>
+              <td>Present</td>
+              <td>10:30 AM</td>
+              <td>6:30 PM</td>
+              <td><button onclick="editLabor('Riya Kothari')">Edit</button></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Yash Mathur</td>
+              <td>Delhi</td>
+              <td>Technician</td>
+              <td>Equiipment Cleaninng </td>
+              <td>Present</td>
+              <td>9:30 AM</td>
+              <td>5:30 PM</td>
+              <td><button onclick="editLabor('Yash Mathur')">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="SALES._JS.js"></script>
+</body>
+</html>

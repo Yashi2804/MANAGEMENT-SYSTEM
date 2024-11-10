@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management System</title>
+    <link rel="stylesheet" href="LOGIN_CSS.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>Select Role to Login</h2>
+        <div class="role-buttons">
+            <button onclick="showForm('admin')">Admin</button>
+            <button onclick="showForm('hr')">Human Resource</button>
+            <button onclick="showForm('labour')">Labour</button>
+            <button onclick="showForm('sales')">Sales Manager</button>
+        </div>
+
+        <div class="form">
+            <h3 id="role-title">Login</h3>
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+            </div>
+            <button onclick="login()">Login</button>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="cancel()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="LOGIN_JS.js"></script> <!-- Link to JS file -->
+</body>
+</html>

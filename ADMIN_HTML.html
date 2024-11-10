@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="ADMIN_CSS.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Admin Dashboard</h1>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section class="user-info">
+      <h2>Managed by Admin</h2>
+      <p>Areas: Noida, Delhi, Greater Noida</p>
+    </section>
+
+    <!-- Graphs Section -->
+    <div class="graphs-container">
+      <div class="chart-container">
+        <h3>Tasks Distribution</h3>
+        <canvas id="pieChart1"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Area-Wise Labour Distribution</h3>
+        <canvas id="pieChart2"></canvas>
+      </div>
+    </div>
+
+    <!-- Labor Details Table Section -->
+    <section class="table-container">
+      <h3>Labor Details</h3>
+      <div class="scrollable-table">
+        <table id="laborTable">
+          <thead>
+            <tr>
+              <th>Sno.</th>
+              <th>Name</th>
+              <th>Area</th>
+              <th>Designation</th>
+              <th>Allotted Work</th>
+              <th>Status</th>
+              <th>In-Time</th>
+              <th>Out-Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+        <tbody>
+              <tr>
+                <td>1</td>
+                <td>Aditi Gupta</td>
+                <td>Noida</td>
+                <td>Supervisor</td>
+                <td>Inventory Sorting</td>
+                <td>Completed</td>
+                <td>9:00 AM</td>
+                <td>5:00 PM</td>
+                <td><button onclick="deleteRow(1)">Delete</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Dhruv Sharma</td>
+                <td>Delhi</td>
+                <td>Technician</td>
+                <td>Equipment Cleaning</td>
+                <td>In Progress</td>
+                <td>10:00 AM</td>
+                <td>6:00 PM</td>
+                <td><button onclick="deleteRow(2)">Delete</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Mayank Pandey</td>
+                <td>Greater Noida</td>
+                <td>Operator</td>
+                <td>Packing Orders</td>
+                <td>Pending</td>
+                <td>8:30 AM</td>
+                <td>4:30 PM</td>
+                <td><button onclick="deleteRow(3)">Delete</button></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Riya Kothari</td>
+                <td>Noida</td>
+                <td>Assistant</td>
+                <td>Inventory Sorting</td>
+                <td>Completed</td>
+                <td>9:00 AM</td>
+                <td>5:00 PM</td>
+                <td><button onclick="deleteRow(4)">Delete</button></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Yash Mathur</td>
+                <td>Delhi</td>
+                <td>Technician</td>
+                <td>Equipment Cleaning</td>
+                <td>In Progress</td>
+                <td>10:00 AM</td>
+                <td>6:00 PM</td>
+                <td><button onclick="deleteRow(5)">Delete</button></td>
+              </tr>
+            </tbody>
+            
+        
+        </table>
+      </div>
+      <form id="addLaborForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <select id="area">
+          <option value="Noida">Noida</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Greater Noida">Greater Noida</option>
+        </select>
+        <input type="text" id="designation" placeholder="Designation" required>
+        <input type="text" id="work" placeholder="Allotted Work" required>
+        <select id="status">
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <input type="time" id="inTime" required>
+        <input type="time" id="outTime" required>
+        <button type="submit">Add Labor</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="ADMIN_JS.js"></script>
+</body>
+</html>
